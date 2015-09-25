@@ -24,7 +24,7 @@ config.core.php
 !/assets/components/basket/
 !/assets/components/modxsite/
 /assets/components/modxsite/templates/*
-!/assets/components/modxsite/templates/main/
+!/assets/components/modxsite/templates/default/
 !/assets/components/modxsite/templates/skins/
 !/assets/components/modcaptcha/
 !/assets/components/modhybridauth/
@@ -43,7 +43,7 @@ config.core.php
 !/core/components/modsociety/
 
 /core/components/modxsite/templates/*
-!/core/components/modxsite/templates/main/
+!/core/components/modxsite/templates/default/
 !/core/components/modxsite/templates/skins/
 !/core/components/shopmodxbox/
 !/core/components/shopmodxgroupedit/
