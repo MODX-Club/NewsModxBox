@@ -1,0 +1,6 @@
+/*
+!/.gitignore
+!/subscribe
+
+/subscribe/*
+!/subscribe/pdf/

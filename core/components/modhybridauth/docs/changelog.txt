@@ -1,0 +1,10 @@
+modHybridAuth-1.0.1-beta
+=======================================
+
+- Renamed alias SocialProfile into SocialProfiles
+
+
+modHybridAuth-1.0.0-beta
+=======================================
+
+First release.
