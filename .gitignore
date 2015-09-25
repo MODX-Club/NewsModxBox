@@ -29,6 +29,7 @@ config.core.php
 !/assets/components/modcaptcha/
 !/assets/components/modhybridauth/
 !/assets/components/tinymce/
+!/assets/avatars/
  
 /core/*
 !/core/components/
