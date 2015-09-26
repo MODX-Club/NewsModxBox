@@ -151,13 +151,13 @@
                                             <td class="date">
                                                 {strftime("%d %b %Y года %A")}
                                             </td> 
-                                            <td>
-                                                {*
-                                                    Погода. Требуется наличие php-imagick
-                                                    Можно передавать параметр region
-                                                *}
-                                                {snippet name=smarty params=['tpl' => 'inc/blocks/weather/index.tpl'] as_tag=1}
-                                            </td>
+                                            {*
+                                                Погода. Требуется наличие php-imagick
+                                                Можно передавать параметр region
+                                            *}
+                                                <td>
+                                                    {snippet name=smarty params=['tpl' => 'inc/blocks/weather/index.tpl'] as_tag=1}
+                                                </td>
                                         </tr>
                                     </tbody>
                                 </table>
