@@ -89,7 +89,17 @@ ArticlesEditor.window.ImageManager = function(config){
                                 win.close();
                             }
                         }
-                    }]
+                    }],
+                    listeners: {
+                        
+                        /*
+                            Прерываем отправку запроса на нажатию Enter
+                        */
+                        beforeSubmit: function(){
+                            console.log('wefwefwefbgggg');
+                            return false;
+                        }
+                    }
                 });
                 
                 win.on('hide', function(){
@@ -267,7 +277,7 @@ Ext.extend(ArticlesEditor.window.ImageManager, MODx.Window, {
         })
     
     ,renderImage: function(image){
-        var html = image == '' ? '' : '<img src="./uploads/'+ image +'" style="max-height:300px;max-width:400px;"/>';
+        var html = image == '' ? '' : '<img src="'+ MODx.config.base_url +'uploads/'+ image +'" style="max-height:300px;max-width:400px;"/>';
         this.update(html);
     }
     
@@ -277,6 +287,35 @@ Ext.extend(ArticlesEditor.window.ImageManager, MODx.Window, {
         ,value: ""
         ,name: "src"
     })
+    
+    
+    
+    ,submit: function(close) {
+        
+        
+        close = close === false ? false : true;
+        var f = this.fp.getForm();
+        if (f.isValid() && this.fireEvent('beforeSubmit',f.getValues())) {
+            f.submit({
+                waitMsg: _('saving')
+                ,scope: this
+                ,failure: function(frm,a) {
+                    if (this.fireEvent('failure',{f:frm,a:a})) {
+                        MODx.form.Handler.errorExt(a.result,frm);
+                    }
+                    this.doLayout();
+                }
+                ,success: function(frm,a) {
+                    if (this.config.success) {
+                        Ext.callback(this.config.success,this.config.scope || this,[frm,a]);
+                    }
+                    this.fireEvent('success',{f:frm,a:a});
+                    if (close) { this.config.closeAction !== 'close' ? this.hide() : this.close(); }
+                    this.doLayout();
+                }
+            });
+        }
+    }
     
     // ,ResourceField: new Ext.form.TextField({
     //     xtype: "textfield"

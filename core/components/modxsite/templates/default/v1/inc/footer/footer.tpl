@@ -10,12 +10,7 @@
     <hr />
     
     {include "inc/menu/footer.tpl" outerClass='menu-2'}
-    
-    {*include "inc/menu/footer.tpl"*}
-    
-    <div class="text-center grey pointed">
-        Настоящий ресурс может содержать материалы 18+
-    </div>
+     
     
     <div class="text-center grey">
         &copy; Все права защищены. {$site_name}
