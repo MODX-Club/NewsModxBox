@@ -134,39 +134,45 @@
                                 <h3 class="slogan">{block pagie_slogan_text}Платформа для новостных порталов{/block}</h3>
                             {/block}
                             
-                            <table class="info">
-                                <tbody>
-                                    <tr>
-                                        <td class="date">
-                                            {strftime("%d %b %Y года %A")}
-                                        </td> 
-                                        <td>
-                                            {*
-                                                Погода. Требуется наличие php-imagick
-                                                Можно передавать параметр region
-                                            *}
-                                            {snippet name=smarty params=['tpl' => 'inc/blocks/weather/index.tpl'] as_tag=1}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            {block header_info}
+                                <table class="info">
+                                    <tbody>
+                                        <tr>
+                                            <td class="date">
+                                                {strftime("%d %b %Y года %A")}
+                                            </td> 
+                                            <td>
+                                                {*
+                                                    Погода. Требуется наличие php-imagick
+                                                    Можно передавать параметр region
+                                                *}
+                                                {snippet name=smarty params=['tpl' => 'inc/blocks/weather/index.tpl'] as_tag=1}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            {/block}
                         </div>
                         
                         <div class="col-sm-3 col-md-3">
-                            <div class="currencies row text-nowrap">
-                                <div class="col-xs-12 col-sm-4 col-md-3" title="Доллары США">$ {$modx->getOption('modxsite.cerrencies.usd')}</div>
-                                <div class="col-xs-12 col-sm-4 col-md-3" title="Евро">&euro; {$modx->getOption('modxsite.cerrencies.eur')}</div>
-                                <div class="col-xs-12 col-sm-4 col-md-3" title="Китайские Юани">元 {$modx->getOption('modxsite.cerrencies.cny')}</div>
-                            </div>
-                            
-                            <form method="get" action="{$modx->makeUrl(84117)}">
-                                <div class="input-group search">
-                                    <input type="text" class="form-control" placeholder="Поиск..." aria-describedby="basic-addon2" name="query">
-                                    <span class="input-group-addon" id="basic-addon2">
-                                        <button type="submit" class="glyphicon glyphicon-search" id="basic-addon2"></button>
-                                    </span>
+                            {block header_currencies}
+                                <div class="currencies row text-nowrap">
+                                    <div class="col-xs-12 col-sm-4 col-md-3" title="Доллары США">$ {$modx->getOption('modxsite.cerrencies.usd')}</div>
+                                    <div class="col-xs-12 col-sm-4 col-md-3" title="Евро">&euro; {$modx->getOption('modxsite.cerrencies.eur')}</div>
+                                    <div class="col-xs-12 col-sm-4 col-md-3" title="Китайские Юани">元 {$modx->getOption('modxsite.cerrencies.cny')}</div>
                                 </div>
-                            </form>
+                            {/block}
+                            
+                            {block header_search}
+                                <form method="get" action="{$modx->makeUrl(84117)}">
+                                    <div class="input-group search">
+                                        <input type="text" class="form-control" placeholder="Поиск..." aria-describedby="basic-addon2" name="query">
+                                        <span class="input-group-addon" id="basic-addon2">
+                                            <button type="submit" class="glyphicon glyphicon-search" id="basic-addon2"></button>
+                                        </span>
+                                    </div>
+                                </form>
+                            {/block}
                             
                         </div>
                         
