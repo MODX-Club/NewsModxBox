@@ -418,34 +418,6 @@ ArticlesEditor.grid.GroupEdit = function(config){
                                 }
                             }
                         },{
-                            fieldLabel: "Тип"
-                            ,xtype: 'modx-combo'
-                            ,name:'article_type'
-                            ,mode: 'local'
-                            ,displayField: 'd'
-                            ,valueField: 'v'
-                            ,store: new Ext.data.SimpleStore({
-                                fields: ['d','v']
-                                ,data: [
-                                    ['Выберите из списка','']
-                                    ,['Статья для сайта',1]
-                                    ,['Зарубежные новости',2]
-                                    ,['Биржевые новости',3]
-                                    ,['Экономический результат',4]
-                                    ,['Бонус статья',5]
-                                    ,['Пресс релиз',6]
-                                    ,['Газета ДП',8]
-                                    ,['Свежий номер (бух. вести)',11]
-                                ]
-                            })
-                            ,listeners:{
-                                select: {
-                                    scope: this
-                                    ,fn: this.onChangeField
-                                }
-                            }
-                            ,width: 200
-                        },{
                             fieldLabel: "Статус"
                             ,xtype: 'modx-combo'
                             ,name:'article_status'

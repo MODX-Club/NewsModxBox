@@ -388,8 +388,12 @@ class ArticlesEditorDocumentsGetdataProcessor extends modWebResourcesArticlesGet
             
             
             $d['menu'] = $menu;
+            
+            # $d['content'] = '';
+            unset($d['content']);
         }
         
+        # return array();
         return $data;
     }
     
