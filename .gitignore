@@ -13,6 +13,7 @@ config.core.php
 !/assets/
 !/core/
 !/manager/
+!/uploads/
  
 #игнорим все в assets 
 /assets/*
@@ -62,3 +63,5 @@ config.core.php
 !/manager/components/articleseditor/
 !/manager/components/modsociety/
 !/manager/components/modxsite/
+
+
