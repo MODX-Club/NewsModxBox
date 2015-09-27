@@ -1,0 +1,67 @@
+#игнорим все корне
+/*
+!/.gitignore
+
+!/.gitignore
+
+#игнорим типичные не нужные файлы
+cache
+config.inc.php
+config.core.php
+
+#отменяем игнор для нужных папок
+!/assets/
+!/core/
+!/manager/
+!/uploads/
+ 
+#игнорим все в assets 
+/assets/*
+#отменяем игнор для нужных папок
+!/assets/components/
+ 
+# Все тоже самое
+/assets/components/*
+!/assets/components/basket/
+!/assets/components/modxsite/
+/assets/components/modxsite/templates/*
+!/assets/components/modxsite/templates/default/
+!/assets/components/modxsite/templates/skins/
+!/assets/components/modcaptcha/
+!/assets/components/modhybridauth/
+!/assets/components/tinymce/
+!/assets/avatars/
+ 
+/core/*
+!/core/components/
+ 
+/core/components/*
+!/core/components/basket/
+!/core/components/billing/
+!/core/components/modxsite/
+!/core/components/articleseditor/
+!/core/components/modjevix/
+!/core/components/modsociety/
+
+/core/components/modxsite/templates/*
+!/core/components/modxsite/templates/default/
+!/core/components/modxsite/templates/skins/
+!/core/components/shopmodxbox/
+!/core/components/shopmodxgroupedit/
+!/core/components/edinayakassa/
+#!/core/components/modcaptcha/
+!/core/components/modhybridauth/
+!/core/components/shopmodxunitpay/
+!/core/components/tinymce/
+!/core/components/modsearch/
+
+/manager/*
+!/manager/components/
+/manager/components/*
+!/manager/components/basket/
+!/manager/components/shopmodxgroupedit/
+!/manager/components/articleseditor/
+!/manager/components/modsociety/
+!/manager/components/modxsite/
+
+

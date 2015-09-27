@@ -1,0 +1,10 @@
+User-agent: *
+Host: {$modx->config.http_host}
+Disallow: 
+Disallow: {$modx->config.assets_url}components/modxsite/*
+Disallow: {$modx->config.assets_url}components/modhybridauth/*
+Disallow: *?
+Allow: *?page=
+Allow: /sitemap.xml?
+Sitemap: {$modx->config.site_url}sitemap.xml
+ 
