@@ -11,10 +11,19 @@ switch($modx->event->name){
     
     // Перед сохранением документа
     case 'OnBeforeDocFormSave':
-        if(!$resource = & $scriptProperties['resource']){
+        $resource = null;
+        
+        foreach($scriptProperties as & $property){
+            if($property instanceof modResource){
+                $resource = & $property;
+                break;
+            }
+        }
+        
+        if(!$resource){
             $modx->log(xPDO::LOG_LEVEL_ERROR, "Не был получен документ");
             return;
-        }
+        } 
         
         /*
             Меняем статусы
@@ -195,15 +204,19 @@ switch($modx->event->name){
         Сохранение документа
     */
     case 'OnDocFormSave':
+        $resource = null;
         
-        // print "sdfsdfsdfs";
+        foreach($scriptProperties as & $property){
+            if($property instanceof modResource){
+                $resource = & $property;
+                break;
+            }
+        }
         
-        // exit;
-        
-        if(!$resource = & $scriptProperties['resource']){
+        if(!$resource){
             $modx->log(xPDO::LOG_LEVEL_ERROR, "Не был получен документ");
             return;
-        }
+        } 
         
         // Если это был создан новый документ,
         // добавляет id к его алиасу
