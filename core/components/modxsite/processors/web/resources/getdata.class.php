@@ -187,10 +187,10 @@ class modWebResourcesGetdataProcessor extends modSiteWebResourcesGetdataProcesso
             
             
             foreach($lemmas as & $lemma){
-                $lemma = "'{$lemma}'";
+                $lemma = "{$lemma}";
             }
-            unset($lemma);
-            
+            # unset($lemma);
+            # 
             # print_r($lemmas);
             # 
             # exit;
@@ -209,14 +209,23 @@ class modWebResourcesGetdataProcessor extends modSiteWebResourcesGetdataProcesso
                 Поиск по всем словам
             */
             # $sql = '';
+            $condition = array();
+            
             foreach($lemmas as $lemma){
-                $sql = "EXISTS (
-                    SELECT NULL FROM {$indexes_table} WHERE {$indexes_table}.resource_id = {$alias}.id AND {$indexes_table}.lemma = {$lemma}
-                )";
-                $c->query['where'][] = new xPDOQueryCondition(array(
-                    'sql' => $sql,
-                ));
+                
+                $quoted = $this->modx->quote("%{$lemma}%");
+                $condition[] = "{$indexes_table}.lemma LIKE {$quoted}";
             }
+                
+            $sql = "EXISTS (
+                SELECT NULL FROM {$indexes_table} 
+                    WHERE {$indexes_table}.resource_id = {$alias}.id 
+                    AND (". implode(' OR ', $condition) .")
+            )";
+            
+            $c->query['where'][] = new xPDOQueryCondition(array(
+                'sql' => $sql,
+            ));
             
             # $sql = "SELECT NULL FROM {$indexes_table} WHERE {$indexes_table}.resource_id = {$alias}.id";
             # 
@@ -236,6 +245,10 @@ class modWebResourcesGetdataProcessor extends modSiteWebResourcesGetdataProcesso
             #     "{$alias}.*", 
             # ));
             # 
+            # $c->select(array(
+            #     "{$alias}.id",
+            #     "{$alias}.pagetitle",
+            # ));
             # $c->prepare();
             # 
             # print $c->toSQL();
