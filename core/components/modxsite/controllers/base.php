@@ -28,7 +28,7 @@ $arr = explode('/', $path);
 foreach($arr as $a){
     $l = mb_convert_case(mb_substr($a, 0, 1, 'utf-8'), MB_CASE_UPPER, 'utf-8');
     $class .= $l;
-    $class .= mb_substr($a, 1, null, 'utf-8');
+    $class .= mb_substr($a, 1, mb_strlen($a, 'utf-8'), 'utf-8');
 }
 
 require_once dirname(__FILE__) . '/view/'.$path.'.class.php';
