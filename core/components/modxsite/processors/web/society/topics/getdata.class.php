@@ -4,7 +4,7 @@
 # class modWebSocietyTopicsGetdataProcessor extends modSocietyWebTopicsGetdataProcessor{
     
     
-require_once __DIR__ . '/../../resources/articles/getdata.class.php';
+require_once dirname(dirname(dirname(__FILE__))) . '/resources/articles/getdata.class.php';
 
 class modWebSocietyTopicsGetdataProcessor extends modWebResourcesArticlesGetdataProcessor{
     

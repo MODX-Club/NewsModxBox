@@ -5,7 +5,7 @@
     Получаем только статьи
 */
 
-require_once __DIR__ . '/../getdata.class.php';
+require_once dirname(dirname(__FILE__)) . '/getdata.class.php';
 
 
 class modWebResourcesArticlesGetdataProcessor extends modWebResourcesGetdataProcessor{

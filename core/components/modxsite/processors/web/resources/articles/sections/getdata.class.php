@@ -4,7 +4,7 @@
     Получаем рубрики новостей
 */
 
-require_once __DIR__ . '/../../getdata.class.php';
+require_once dirname(dirname(dirname(__FILE__))) . '/getdata.class.php';
 
 
 class modWebResourcesArticlesSectionsGetdataProcessor extends modWebResourcesGetdataProcessor{

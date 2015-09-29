@@ -4,7 +4,7 @@
     Вывод вакансии
 */
 
-require_once __DIR__ . '/../../view.class.php';
+require_once dirname(dirname(dirname(__FILE__))) . '/view.class.php';
 
 class VacanciesVacancyView extends View{
     

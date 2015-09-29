@@ -5,7 +5,7 @@
     Важно учитывать, что сохранение происходит при каждом вызове объекта
 */
 
-require_once __DIR__ . '/../../object.class.php';
+require_once dirname(dirname(dirname(__FILE__))) . '/object.class.php';
 
 class modWebSocietyVotesObjectProcessor extends modXObjectProcessor{
     

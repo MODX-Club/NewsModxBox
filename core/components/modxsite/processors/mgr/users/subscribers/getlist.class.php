@@ -4,7 +4,7 @@
     Подписчики
 */
 
-require_once __DIR__ . '/../getlist.class.php';
+require_once dirname(dirname(__FILE__)) . '/getlist.class.php';
 
 class modMgrUsersSubscribersGetlistProcessor extends modMgrUsersGetlistProcessor{
     
