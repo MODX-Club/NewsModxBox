@@ -36,12 +36,12 @@ class modWebSocietyTopicsGetdataProcessor extends modWebResourcesArticlesGetdata
     }
     
     
-    public function prepareCountQuery(xPDOQuery & $query){
-        $query = parent::prepareCountQuery($query);
+    // public function prepareCountQuery(xPDOQuery & $query){
+    //     $query = parent::prepareCountQuery($query);
         
-        $where = array(
-            "template"  => 2,  // Получаем только статьи
-        );
+    //     $where = array(
+    //         // "template"  => 2,  // Получаем только статьи
+    //     );
         
         // Получаем все блоги, к которым есть доступ на чтение
         /*$q = $this->modx->newQuery('SocietyBlog');
@@ -75,12 +75,12 @@ class modWebSocietyTopicsGetdataProcessor extends modWebResourcesArticlesGetdata
         #     $where['Tags.tag'] = $tag;
         # }
         
-        if($where){
-            $query->where($where);
-        }
+    //     if($where){
+    //         $query->where($where);
+    //     }
         
-        return $query;
-    }
+    //     return $query;
+    // }
     
     
     public function setSelection(xPDOQuery $q){
