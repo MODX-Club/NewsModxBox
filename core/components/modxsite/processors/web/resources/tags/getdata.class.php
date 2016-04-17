@@ -4,7 +4,6 @@
     Получаем теги
 */
 
-# require_once __DIR__ . '/../getdata.class.php';
 
 class modWebResourcesTagsGetdataProcessor extends modProcessor{
     

@@ -4,7 +4,7 @@
     Специализации
 */ 
 
-require_once __DIR__ . '/../request.class.php';
+require_once dirname(dirname(__FILE__)) . '/request.class.php';
 
 class modWebApiHhSpecializationsRequestProcessor extends modWebApiHhRequestProcessor{
      

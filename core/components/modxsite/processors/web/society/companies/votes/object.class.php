@@ -4,7 +4,7 @@
     Голосовние за определенную компанию (заведение).
 */
 
-require_once __DIR__ . '/../../votes/object.class.php';
+require_once dirname(dirname(dirname(__FILE__))) . '/votes/object.class.php';
 
 
 class modWebSocietyCompaniesVotesObjectProcessor extends modWebSocietyVotesObjectProcessor{

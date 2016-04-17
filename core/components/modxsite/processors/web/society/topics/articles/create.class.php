@@ -4,7 +4,7 @@
     Создание статей
 */
 
-require_once __DIR__ . '/../create.class.php';
+require_once dirname(dirname(__FILE__)) . '/create.class.php';
 
 class modWebSocietyTopicsArticlesCreateProcessor extends modWebSocietyTopicsCreateProcessor{
     

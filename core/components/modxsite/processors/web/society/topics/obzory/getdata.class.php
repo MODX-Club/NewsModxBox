@@ -4,7 +4,7 @@
     Получаем только обзоры заведений
 */
 
-require_once __DIR__ . '/../getdata.class.php';
+require_once dirname(dirname(__FILE__)) . '/getdata.class.php';
 
 class modWebSocietyTopicsObzoryGetdataProcessor extends modWebSocietyTopicsGetdataProcessor{
     

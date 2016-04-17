@@ -2,7 +2,7 @@
 
 
 {*
-    Здесь мы получаем Одну главную новость и две из рубрики Бизнес-идеи
+    Здесь мы получаем три главных новости
 *}
 
 
@@ -15,8 +15,7 @@
     {$processor = "web/resources/articles/main/getdata"}
     
     {$aditional_params = array_merge($params, [
-        "limit"     => 2,
-        "parent"    => 86816
+        "limit"     => 2
     ])}
     
     {$aditional_processor = "web/resources/articles/getdata"}

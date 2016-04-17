@@ -6,7 +6,7 @@
     Так же учитываем рабочий день или не рабочий
 */
 
-require_once __DIR__. '/../../../resources/articles/getdata.class.php';
+require_once dirname(dirname(dirname(dirname(__FILE__)))). '/resources/articles/getdata.class.php';
 
 class modWebSocietyEmailmessagesArticlesCreatemailingProcessor extends modWebResourcesArticlesGetdataProcessor{
     

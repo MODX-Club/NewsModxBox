@@ -4,7 +4,7 @@
     Управление подписками
 */
 
-require_once __DIR__ . '/../index.class.php';
+require_once dirname(dirname(__FILE__)) . '/index.class.php';
 
 class ModxsiteControllersMgrSubscribersIndexManagerController extends ControllersMgrManagerController{
     
